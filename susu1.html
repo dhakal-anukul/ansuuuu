@@ -1,0 +1,134 @@
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Quicksand:wght@500;700&display=swap');
+
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            font-family: 'Quicksand', sans-serif;
+            background-color: #fef6f9;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('susu.jpg') no-repeat center center/cover;
+            filter: blur(7px) brightness(0.7);
+            z-index: -1;
+        }
+
+        .box {
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            padding: 10px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 192, 203, 0.6);
+            border-radius: 25px;
+            text-align: center;
+            font-size: 38px;
+            font-family: 'Parisienne', cursive;
+            padding-top: 80px;
+            cursor: pointer;
+            opacity: 0.9;
+            color: #fff;
+            text-shadow: 1px 1px 3px #000;
+            box-shadow: 0 0 25px rgba(255, 182, 193, 0.6);
+            backdrop-filter: blur(8px);
+            transition: all 0.4s ease;
+            z-index: 1;
+            padding-top: 110px;
+        }
+
+        .top-left {
+            top: 30px;
+            left: 30px;
+        }
+
+        .bottom-right {
+            bottom: 30px;
+            right: 30px;
+        }
+
+        .box:hover {
+            transform: scale(1.05) translateY(-5px);
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 40px rgba(255, 182, 193, 0.8);
+        }
+
+        .box:active {
+            transform: scale(0.97);
+            opacity: 0.6;
+        }
+
+        .image-top-right,
+        .image-bottom-left {
+            position: absolute;
+            z-index: 10;
+            transition: transform 1s ease;
+        }
+
+        .image-top-right {
+            top: 10px;
+            right: 10px;
+            width: 400px;
+            height: 400px;
+        }
+
+        .image-bottom-left {
+            bottom: 10px;
+            left: 10px;
+            width: 250px;
+            height: 300px;
+        }
+
+        .image-top-right:hover,
+        .image-bottom-left:hover {
+            transform: scale(1.05) rotate(1deg);
+        }
+
+        @media (max-width: 768px) {
+            .box {
+                width: 90%;
+                height: auto;
+                font-size: 28px;
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+
+            .image-top-right {
+                width: 250px;
+                height: 250px;
+            }
+
+            .image-bottom-left {
+                width: 180px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top-right image -->
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHBwZzYyeWdvcHdyb2w4bXFxYXl3dzJtaGQ0cjV5d2Y1NXJ3cjd4NSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/IG5nJivlKeDs6dlxqN/giphy.gif" class="image-top-right" alt="Top Right Image">
+
+    <!-- Bottom-left image -->
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2h5bnJvbTM0bGprNjA5MzR1YXJnMHowYjlwbm5oOGFxenVxemczcSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/GKNHdeIVuksQitsXvS/giphy.gif" class="image-bottom-left" alt="Bottom Left Image">
+
+    <!-- Boxes -->
+    <div class="box top-left" onclick="window.location.href='photos.html';">
+        See our journey of togetherness 🤍
+    </div>
+    <div class="box bottom-right" onclick="window.location.href='susu2.html';">
+        Learn more about my princess 👑
+    </div> 
+</body>
+</html>

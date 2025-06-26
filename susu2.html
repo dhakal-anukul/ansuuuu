@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Girl</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #ffd6e8, #ffeaf3);
+      font-family: 'Quicksand', sans-serif;
+      position: relative;
+    }
+
+    .photo {
+      position: absolute;
+      width: 100px;
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(255, 105, 180, 0.7);
+      animation: floatDown linear infinite;
+      opacity: 0.9;
+      z-index: 1;
+      filter: drop-shadow(0 0 6px rgba(255, 105, 180, 0.5));
+    }
+
+    @keyframes floatDown {
+      0% {
+        transform: translateY(-200px);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(120vh);
+        opacity: 0;
+      }
+    }
+
+    .center-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 25px;
+      padding: 40px;
+      text-align: center;
+      max-width: 600px;
+      box-shadow: 0 0 30px rgba(255, 105, 135, 0.5);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .center-box h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 50px;
+      margin-bottom: 20px;
+      color: #d63384;
+    }
+
+    .center-box p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png')
+        no-repeat center;
+      background-size: contain;
+      opacity: 0.7;
+      pointer-events: none;
+      animation: floatHeart linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const totalPhotos = 30; // 30 photos
+    const usedLefts = [];
+
+    for (let i = 0; i < totalPhotos; i++) {
+      const photo = document.createElement('div');
+      photo.classList.add('photo');
+
+      // Ensure photos are spaced out
+      let left;
+      let tries = 0;
+      do {
+        left = Math.floor(Math.random() * 90);
+        tries++;
+      } while (usedLefts.some((existing) => Math.abs(existing - left) < 4) && tries < 100);
+      usedLefts.push(left);
+
+      photo.style.left = `${left}vw`;
+      photo.style.animationDuration = `${8 + Math.random() * 4}s`;
+      photo.style.animationDelay = `${Math.random() * 6}s`;
+      photo.style.backgroundImage = `url('photos/g${i + 1}.jpeg')`;
+      document.body.appendChild(photo);
+    }
+
+    // Floating hearts
+    const totalHearts = 30;
+    for (let i = 0; i < totalHearts; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 10 + Math.random() * 10 + 's';
+      heart.style.animationDelay = Math.random() * 10 + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <div class="center-box">
+    <h1>My Everything</h1>
+    <p>
+      She’s not just a girl — she’s my light, my life, and the peace in my chaos. Her laugh makes everything feel better, and just being around her turns ordinary moments into something special.
+
+When she smiles, the world feels better.
+
+
+      <br /><br />
+      These floating memories are just small pieces of how much she means to me.
+She’s not just a part of my life — she is my life. ❤️
+
+      <br /><br />
+      Ilovemycutieeee sooo muchhhhh 🤍😽
+    </p>
+  </div>
+</body>
+</html>
